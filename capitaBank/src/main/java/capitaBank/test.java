@@ -1,4 +1,8 @@
 package capitaBank;
+import capitaBank.Account_controller;
+import capitaBank.Account;
+import capitaBank.Customer;
+
 
 public class test {
 
@@ -20,7 +24,7 @@ public class test {
 //		System.out.println(a1.getAccountId());
 //		a1.deposit(10.00);
 //		ac.removeCustomer(c1);
-		
+
 	}
 
 }
