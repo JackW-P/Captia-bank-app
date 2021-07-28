@@ -1,0 +1,17 @@
+package capitaBank;
+
+import java.util.ArrayList;
+
+public class Customer {
+	private long customer_Id;
+	private static long nextCustomerId = 100;
+	private String name;
+	private String address;
+	
+	private ArrayList<Account> accounts = new ArrayList<>();
+	
+	public Customer(String name,String address) {
+		
+	}
+	
+}

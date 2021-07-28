@@ -1,0 +1,87 @@
+package capitaBank;
+
+import java.util.Scanner;
+
+public class bankUI {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+	}
+	
+	public void showMenu() {
+		char option='\0';
+        Scanner scanner = new Scanner(System.in);
+        Account_controller ac = new Account_controller();
+        Customer c1 = new Customer("Bob","Alan","Road");
+        Account a1 = ac.createAccount(c1,accountType.SAVINGS);
+        Customer c2 = new Customer("Alex","John","Road");
+		Account a2 = ac.createAccount(c2,accountType.CHECKING);
+        
+        System.out.println("Welcome " + c1.getFirstName());
+        System.out.println("Your ID is " + c1.getCustomerId());
+        System.out.println("\n");
+        System.out.println("A. Check Blanace");
+        System.out.println("B. Deposit");
+        System.out.println("C. Withdraw");
+        System.out.println("D. Transfer");
+        System.out.println("E. Exit");
+            
+            do {
+                System.out.println("==============================================================================================================================================================================================");
+                System.out.println("Enter an option");
+                System.out.println("==============================================================================================================================================================================================");
+                option = scanner.next().charAt(0);
+                System.out.println("\n");
+
+                switch(option){
+                
+                case 'A':
+                System.out.println("-------------------------------------------------------------");
+                System.out.println("Balance = "+a1.getBalance());
+                System.out.println("-------------------------------------------------------------");
+                System.out.println("\n");
+                break;
+
+                case 'B':
+                System.out.println("-------------------------------------------------------------");
+                System.out.println("Enter an amount to deposit:");
+                System.out.println("-------------------------------------------------------------");
+                int amount = scanner.nextInt();
+                a1.deposit(amount);
+                System.out.println("\n");
+                break;
+
+                case 'C':
+                System.out.println("-------------------------------------------------------------");
+                System.out.println("Enter an amount to withdraw");
+                System.out.println("-------------------------------------------------------------");
+                int amount2 = scanner.nextInt();
+                a1.withdraw(amount2);
+                System.out.println("\n");
+                break;
+
+                case 'D':
+                System.out.println("-------------------------------------------------------------");
+                System.out.println("Please enter the account you wish to transfer to and amount");
+                int transferAmount = scanner.nextInt();
+                a1.transfer(a2,transferAmount);
+                System.out.println("-------------------------------------------------------------");
+                System.out.println("\n");
+                break;
+
+                case 'E':
+                System.out.println("**************************************************************");
+                break;
+
+                default:
+                System.out.println("Invalid Option. Please enter again");
+                break;
+                }
+            }while(option != 'E');
+                System.out.println("Thank you for using our services");
+        }
+	}
+
+

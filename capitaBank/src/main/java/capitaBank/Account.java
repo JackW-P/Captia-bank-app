@@ -1,46 +1,48 @@
 package capitaBank;
 
-public class Account {
-	private final int account_Id;
-	private static int nextAccountId = 1;
-	protected double balance;
+public class Account {	
+	private final int accountId;
+	private final Customer customer;
 	
+	protected double funds;
 	
-	public Account() {
-		account_Id = nextAccountId;
-		nextAccountId++;
+	public Account(int accountId, Customer customer, double funds) {
+		this.accountId = accountId;
+		this.customer = customer;
+		this.funds = funds;
 	}
 	
+	//get the id number for the account
+	public int getAccountId() {
+		return accountId;
+	}
+	
+	//withdraw money
 	public double withdraw(double amount) {
-		userDao d = new userDao();
-		balance -= amount;
-		d.updateBalance(balance, getAccountId());
+		AccountDAO d = new AccountDAO();
+		funds -= amount;
+		d.updateBalance(funds, getAccountId());
 		return amount;
 		
 	}
 	
+	//deposit money
 	public void deposit(double amount) {
-		userDao d = new userDao();
-		balance += amount;
-		d.updateBalance(balance, getAccountId());
+		AccountDAO d = new AccountDAO();
+		funds += amount;
+		d.updateBalance(funds, accountId);
 	}
 	
-	public double getBalance(){
-		return balance;
+	//get balance in account
+	public double getFunds(){
+		return funds;
 	}
 	
-	public void transfer(Account a,double amount) {
-		userDao d = new userDao();
-		a.deposit(amount);
-		balance -=amount;
-		d.updateBalance(balance, getAccountId());
-	}
-	
-	public void correctBalance(double amount) {
-		balance = amount;
-	}
-	
-	public int getAccountId() {
-		return account_Id;
+	//transfer money from this account to another account
+	public void transfer(Account accountToTransfer, double amount) {
+		AccountDAO userDAO = new AccountDAO();
+		accountToTransfer.deposit(amount);
+		funds -=amount;
+		userDAO.updateBalance(funds, accountId);
 	}
 }

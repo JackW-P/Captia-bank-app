@@ -1,0 +1,52 @@
+package capitaBank;
+
+public class Account {
+	private final int account_Id;
+	private static int nextAccountId = 1;
+	protected double balance;
+	
+	
+	public Account() {
+		account_Id = nextAccountId;
+		nextAccountId++;
+	}
+	
+	//withdraw money
+	public double withdraw(double amount) {
+		userDao d = new userDao();
+		balance -= amount;
+		d.updateBalance(balance, getAccountId());
+		return amount;
+		
+	}
+	
+	//deposit money
+	public void deposit(double amount) {
+		userDao d = new userDao();
+		balance += amount;
+		d.updateBalance(balance, getAccountId());
+	}
+	
+	//get balance in account
+	public double getBalance(){
+		return balance;
+	}
+	
+	//transfer money to another account
+	public void transfer(Account a,double amount) {
+		userDao d = new userDao();
+		a.deposit(amount);
+		balance -=amount;
+		d.updateBalance(balance, getAccountId());
+	}
+	
+	//make correct balance
+	public void correctBalance(double amount) {
+		balance = amount;
+	}
+	
+	//get the id number fo the account
+	public int getAccountId() {
+		return account_Id;
+	}
+}
