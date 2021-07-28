@@ -2964,3 +2964,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2021-07-28 10:57:59,285 [Worker-36: Launching BankUI] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2021-07-28 10:57:59,285 [Worker-36: Launching BankUI] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2021-07-28 10:57:59,286 [Worker-36: Launching BankUI] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-07-28 11:41:31,193 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-07-28 11:41:31,194 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-07-28 11:41:31,195 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-07-28 11:41:31,195 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
