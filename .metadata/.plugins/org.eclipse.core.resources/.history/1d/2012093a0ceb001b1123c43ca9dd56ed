@@ -1,0 +1,23 @@
+package capitaBank;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+public class app {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/capitaBank");
+		dataSource.setUsername("root");
+		dataSource.setPassword("password");
+		
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		String sql = "insert into users (first_name) values(?)";
+		int result = jdbcTemplate.update(sql, "Ben");
+		
+	}
+
+	}
+
+

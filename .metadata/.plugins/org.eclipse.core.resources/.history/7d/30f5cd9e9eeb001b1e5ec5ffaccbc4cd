@@ -1,0 +1,16 @@
+package capitaBank;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Account_controller ac = new Account_controller();
+		Customer c1 = new Customer("Bob","Alan","Road");
+//		Account a1 = ac.createAccount(c1,accountType.SAVINGS);
+		Account a = new Account();
+		
+//		ac.removeCustomer(c1);
+		
+	}
+
+}

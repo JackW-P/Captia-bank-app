@@ -1,0 +1,98 @@
+package capitaBank;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AccountController {
+	private List<Customer> customers = new ArrayList<>();
+    private List<Account> accounts = new ArrayList<>();
+    private AccountType accountType;
+    private Customer cust;
+    
+    private final AccountDAO userDao;
+   
+    public AccountController(AccountDAO userDao) {
+    	this.userDao = userDao;
+    }
+//    public Customer createCustomer(String firstName, String lastName, String accountType) {
+//    	Customer c = new Customer(firstName, lastName, accountType );
+//    	customers.add(c);
+//    	return null;
+//    }
+    
+    public Account insertAccount(NewAccount newAccount) {
+    	return userDao.insertAccount(newAccount);
+    }
+    
+    public void deleteAccount(Account account) {
+    	userDao.deleteAccount(account.getAccountId());
+    }
+    
+//    public Account createAndInsertAccount(Customer c, AccountType a) {
+//    	userDao d = new userDao();
+//    	
+//    	if(a == accountType.CHECKING) {
+//    		CheckingAccount acc = new CheckingAccount();
+//    		accounts.add(acc);
+//    		c.addAccount(acc);
+//    		d.insertAccount(acc.getAccountId(),c.getFirstName(), c.getLastName(),0.0, "CHECKING");
+//    		return acc;
+//    	} else if(a == accountType.SAVINGS) {
+//    		SavingAccount s = new SavingAccount();
+//    		accounts.add(s);
+//    		c.addAccount(s);
+//    		d.insertAccount(s.getAccountId(),c.getFirstName(), c.getLastName(), 0.0, "SAVINGS");
+//    		return s;
+//    	}
+//    	return null;
+//    }
+    
+    
+    
+//    public Account createAccounts(Customer c, AccountType a) {
+//    	userDao d = new userDao();
+//    	
+//    	if(a == accountType.CHECKING) {
+//    		CheckingAccount acc = new CheckingAccount();
+//    		accounts.add(acc);
+//    		c.addAccount(acc);
+//    		
+//    		return acc;
+//    	} else if(a == accountType.SAVINGS) {
+//    		SavingAccount s = new SavingAccount();
+//    		accounts.add(s);
+//    		c.addAccount(s);
+//    		
+//    		return s;
+//    	}
+//    	return null;
+//    }
+    
+    
+//    public void getAccount() {
+//    	for(Account i:accounts) {
+//    		System.out.println(i);
+//    	}
+//    }
+    
+    
+//    public void removeAccount(Account a) {
+//    	accounts.remove(a);
+//    	for(Customer i:customers) {
+//    		cust = i;
+//    		cust.removeAccount(a);
+//    	}
+//    }
+    
+//    public void removeCustomer(Customer c) {
+//    	customers.remove(c);
+//    	List<Account> list = c.getAccount();
+//    	for(Account i:list) {
+//    		if(accounts.contains(i)) {
+//    			accounts.remove(i);
+//    		}
+//    	}
+//    	userDao d = new userDao();
+//    	d.deleteAccount(c.getFirstName());
+//    }
+}

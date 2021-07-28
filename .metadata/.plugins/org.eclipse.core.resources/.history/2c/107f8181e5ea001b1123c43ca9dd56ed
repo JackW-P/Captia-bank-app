@@ -1,0 +1,33 @@
+package capitaBank;
+
+public class account {
+	private final long account_Id;
+	private static long nextAccountId = 1;
+	protected double balance;
+	
+	public account() {
+		account_Id = nextAccountId;
+		nextAccountId++;
+	}
+	
+	public double withdraw(double amount) {
+		balance -= amount;
+		return amount;
+	}
+	
+	public void deposit(double amount) {
+		balance += amount;
+	}
+	
+	public double getBalance(){
+		return balance;
+	}
+	
+	public void correctBalance(double amount) {
+		balance = amount;
+	}
+	
+	public long getAccountId() {
+		return account_Id;
+	}
+}
